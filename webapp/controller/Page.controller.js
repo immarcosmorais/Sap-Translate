@@ -186,10 +186,8 @@ sap.ui.define([
 			onInit: function () {
 
 				var oData = this.defineData();
-
 				var oModel = new JSONModel(oData);
 				this.getView().setModel(oModel);
-
 				this.getView().byId("idTo").setSelectedKey("pt");
 				this.getView().byId("idFrom").setSelectedKey("en");
 				this.oRouter = sap.ui.core.UIComponent.getRouterFor(this);
@@ -221,17 +219,17 @@ sap.ui.define([
 				};
 
 				var ODataJSON = JSON.stringify(oData);
-				var self = this;
+				var that = this;
 
 				oModel.loadData("/ml-dest/translation/translation", ODataJSON, true, "POST", null, false, sHeaders);
 				oModel.attachRequestCompleted(function (oEvent) {
 					oData = oEvent.getSource().oData;
 					var newText = "The text was not translated";
-					if (!self.isEmptyObject(oData)) {
+					if (!that.isEmptyObject(oData)) {
 						newText = oData.units[0].translations[0].value;
-						self.getView().byId("idNewText").setValue(newText);
+						that.getView().byId("idNewText").setValue(newText);
 					} else {
-						self.getView().byId("idNewText").setValue(newText);
+						that.getView().byId("idNewText").setValue(newText);
 					}
 				});
 
