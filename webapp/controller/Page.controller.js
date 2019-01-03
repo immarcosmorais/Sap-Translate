@@ -197,7 +197,7 @@ sap.ui.define([
 
 			translate: function () {
 
-				var apiKey = this.getView().getModel("demo").getProperty("/APIKey");
+				var apiKey = this.getView().getModel("demo").getProperty("/ApiKey");
 
 				var oModel = new sap.ui.model.json.JSONModel();
 				var langFrom = this.getView().byId("idFrom").getSelectedKey();
