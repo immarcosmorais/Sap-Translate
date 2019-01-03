@@ -1,0 +1,144 @@
+{
+	"languagesCollection": [{
+		"key": "ar",
+		"text": "Arabic"
+	}, {
+		"key": "bg",
+		"text": "Bulgarian"
+	}, {
+		"key": "ca",
+		"text": "Catalan"
+	}, {
+		"key": "zh",
+		"text": "Chinese (Simplified)"
+	}, {
+		"key": "zf",
+		"text": "Chinese (Traditional)"
+	}, {
+		"key": "hr",
+		"text": "Croatian"
+	}, {
+		"key": "cs",
+		"text": "Czech"
+	}, {
+		"key": "da",
+		"text": "Danish"
+	}, {
+		"key": "nl",
+		"text": "Dutch"
+	}, {
+		"key": "6n",
+		"text": "English (Great Britain)"
+	}, {
+		"key": "en",
+		"text": "English (United States)"
+	}, {
+		"key": "et",
+		"text": "Estonian"
+	}, {
+		"key": "fi",
+		"text": "Finnish"
+	}, {
+		"key": "fr",
+		"text": "French (France)"
+	}, {
+		"key": "3f",
+		"text": "French (Canada)"
+	}, {
+		"key": "de",
+		"text": "German"
+	}, {
+		"key": "el",
+		"text": "Greek"
+	}, {
+		"key": "he",
+		"text": "Hebrew"
+	}, {
+		"key": "hi",
+		"text": "Hindi"
+	}, {
+		"key": "hu",
+		"text": "Hungarian"
+	}, {
+		"key": "it",
+		"text": "Italian"
+	}, {
+		"key": "ja",
+		"text": "Japanese"
+	}, {
+		"key": "ko",
+		"text": "Korean"
+	}, {
+		"key": "lv",
+		"text": "Latvian"
+	}, {
+		"key": "lt",
+		"text": "Lithuanian"
+	}, {
+		"key": "ms",
+		"text": "Malay"
+	}, {
+		"key": "no",
+		"text": "Norwegian"
+	}, {
+		"key": "fa",
+		"text": "Persian - pilot language"
+	}, {
+		"key": "pl",
+		"text": "Polish"
+	}, {
+		"key": "pt",
+		"text": "Portuguese (Brazil)"
+	}, {
+		"key": "1p",
+		"text": "Portuguese (Portugal)"
+	}, {
+		"key": "ro",
+		"text": "Romanian"
+	}, {
+		"key": "ru",
+		"text": "Russian"
+	}, {
+		"key": "sr",
+		"text": "Serbian"
+	}, {
+		"key": "sh",
+		"text": "Serbian (Latin)"
+	}, {
+		"key": "sk",
+		"text": "Slovak"
+	}, {
+		"key": "sl",
+		"text": "Slovenian"
+	}, {
+		"key": "0s",
+		"text": "Spanish (Colombia)"
+	}, {
+		"key": "es",
+		"text": "Spanish (Spain)"
+	}, {
+		"key": "sv",
+		"text": "Swedish"
+	}, {
+		"key": "th",
+		"text": "Thai"
+	}, {
+		"key": "tr",
+		"text": "Turkish"
+	}, {
+		"key": "uk",
+		"text": "Hebrew"
+	}, {
+		"key": "hi",
+		"text": "Hindi"
+	}, {
+		"key": "hu",
+		"text": "Ukrainian"
+	}, {
+		"key": "vi",
+		"text": "Vietnamese"
+	}, {
+		"key": "ja",
+		"text": "Japanese"
+	}]
+}

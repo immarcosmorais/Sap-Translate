@@ -1,0 +1,89 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:core="sap.ui.core"
+	controllerName="com.sap.build.standard.translation.controller.Page">
+	<Page showHeader="true" title="SAP Translation" showFooter="true" showNavButton="false">
+		<content>
+			<ScrollContainer horizontal="true" vertical="true" width="100%" height="100%" visible="true">
+				<content>
+					<layout:BlockLayout background="Default" visible="true">
+						<layout:content>
+							<layout:BlockLayoutRow scrollable="false" class="sapUiTinyMargin">
+								<layout:content>
+									<layout:BlockLayoutCell width="3" title="From" titleAlignment="Begin" titleLevel="Auto">
+										<layout:content>
+											<VBox alignItems="Stretch" direction="Column" fitContainer="false" width="auto" height="auto" justifyContent="Start" renderType="Div"
+												visible="true" displayInline="false">
+												<items>
+													<VBox alignItems="Stretch" direction="Column" fitContainer="false" width="auto" height="auto" justifyContent="Start" renderType="Div"
+														visible="true" displayInline="false">
+														<items>
+															<Select width="100%" maxWidth="100%" icon="" enabled="true" type="Default" textAlign="Initial" valueState="None" forceSelection="false"
+																id="idFrom" items="{ path: '/languagesCollection', sorter: { path: 'text' } }">
+																<core:ListItem key="{key}" text="{text}"/>
+															</Select>
+															<Input type="Text" showValueHelp="false" enabled="true" visible="true" width="100%" valueHelpOnly="false" maxLength="0" id="idOldText"/>
+														</items>
+														<layoutData/>
+													</VBox>
+												</items>
+												<layoutData/>
+											</VBox>
+										</layout:content>
+									</layout:BlockLayoutCell>
+									<layout:BlockLayoutCell width="1" title="" titleAlignment="Begin" titleLevel="Auto">
+										<layout:content>
+											<VBox alignItems="Center" direction="Column" fitContainer="false" width="100%" height="100%" justifyContent="Center" renderType="Div"
+												visible="true" displayInline="false">
+												<items>
+													<Button text="" type="Emphasized" icon="sap-icon://sort" iconFirst="true" width="auto" enabled="true" visible="true"
+														iconDensityAware="false" press="change"/>
+												</items>
+												<layoutData/>
+											</VBox>
+										</layout:content>
+									</layout:BlockLayoutCell>
+									<layout:BlockLayoutCell width="3" title="To" titleAlignment="Begin" titleLevel="Auto">
+										<layout:content>
+											<VBox alignItems="Stretch" direction="Column" fitContainer="false" width="auto" height="auto" justifyContent="Start" renderType="Div"
+												visible="true" displayInline="false">
+												<items>
+													<VBox alignItems="Stretch" direction="Column" fitContainer="false" width="auto" height="auto" justifyContent="Start" renderType="Div"
+														visible="true" displayInline="false">
+														<items>
+															<Select width="100%" maxWidth="100%" icon="" enabled="true" type="Default" textAlign="Initial" valueState="None" forceSelection="false"
+																id="idTo" items="{ path: '/languagesCollection', sorter: { path: 'text' } }">
+																<core:ListItem key="{key}" text="{text}"/>
+															</Select>
+															<Input type="Text" showValueHelp="false" visible="true" width="100%" valueHelpOnly="false" maxLength="0" id="idNewText" editable="false"/>
+														</items>
+														<layoutData/>
+													</VBox>
+												</items>
+												<layoutData/>
+											</VBox>
+										</layout:content>
+									</layout:BlockLayoutCell>
+									<layout:BlockLayoutCell width="1" title="" titleAlignment="End" titleLevel="Auto">
+										<layout:content>
+											<VBox alignItems="Stretch" direction="Column" fitContainer="false" width="auto" height="100%" justifyContent="Center" renderType="Div"
+												visible="true" displayInline="false">
+												<items>
+													<Button text="Translate" type="Emphasized" icon="sap-icon://discussion" iconFirst="true" width="100%" enabled="true" visible="true"
+														iconDensityAware="false" id="idTranslate" press="translate"/>
+												</items>
+												<layoutData/>
+											</VBox>
+										</layout:content>
+									</layout:BlockLayoutCell>
+								</layout:content>
+							</layout:BlockLayoutRow>
+						</layout:content>
+					</layout:BlockLayout>
+				</content>
+			</ScrollContainer>
+		</content>
+		<footer/>
+		<headerContent/>
+		<subHeader/>
+		<customHeader/>
+	</Page>
+</mvc:View>
