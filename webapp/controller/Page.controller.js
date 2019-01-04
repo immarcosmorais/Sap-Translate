@@ -232,10 +232,15 @@ sap.ui.define([
 							var newText = oData.units[0].translations[0].value;
 							that.getView().byId("idNewText").setValue(newText);
 						} else {
-							MessageToast.show("The text was not translated!");
+							var bCompact = !!that.getView().$().closest(".sapUiSizeCompact").length;
+							MessageBox.error(
+								"The text was not translated", {
+									styleClass: bCompact ? "sapUiSizeCompact" : ""
+								}
+							);
 						}
 					});
-					
+
 				} else {
 					MessageToast.show("It is required filling some text to translation!");
 				}
