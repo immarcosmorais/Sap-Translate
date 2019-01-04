@@ -40,6 +40,9 @@ sap.ui.define([
 			defineData: function () {
 				return {
 					"languagesCollection": [{
+						"key": "zf",
+						"text": "Chinese (Traditional)"
+					}, {
 						"key": "ar",
 						"text": "Arabic"
 					}, {
@@ -51,9 +54,6 @@ sap.ui.define([
 					}, {
 						"key": "zh",
 						"text": "Chinese (Simplified)"
-					}, {
-						"key": "zf",
-						"text": "Chinese (Traditional)"
 					}, {
 						"key": "hr",
 						"text": "Croatian"
@@ -233,11 +233,9 @@ sap.ui.define([
 							that.getView().byId("idNewText").setValue(newText);
 						} else {
 							var bCompact = !!that.getView().$().closest(".sapUiSizeCompact").length;
-							MessageBox.error(
-								"The text was not translated", {
-									styleClass: bCompact ? "sapUiSizeCompact" : ""
-								}
-							);
+							MessageBox.error("The text was not translated", {
+								styleClass: bCompact ? "sapUiSizeCompact" : ""
+							});
 						}
 					});
 
