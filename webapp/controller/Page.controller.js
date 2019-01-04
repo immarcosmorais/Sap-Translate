@@ -204,9 +204,9 @@ sap.ui.define([
 				var oldText = this.getView().byId("idOldText").getValue();
 
 				if (oldText !== "") {
-
-					var oModel = new sap.ui.model.json.JSONModel();
+					
 					var apiKey = this.getView().getModel("demo").getProperty("/ApiKey");
+					var oModel = new sap.ui.model.json.JSONModel();
 
 					var sHeaders = {
 						"Content-Type": "application/json",
@@ -227,7 +227,7 @@ sap.ui.define([
 
 					oModel.loadData("/ml-dest/translation/translation", ODataJSON, true, "POST", null, false, sHeaders);
 					oModel.attachRequestCompleted(function (oEvent) {
-						oData = oEvent.getSource().oData;
+						oData = oEvent.getSource().getData();
 						if (!that.isEmptyObject(oData)) {
 							var newText = oData.units[0].translations[0].value;
 							that.getView().byId("idNewText").setValue(newText);

@@ -20,7 +20,8 @@
 																id="idFrom" items="{ path: '/languagesCollection', sorter: { path: 'text' } }">
 																<core:ListItem key="{key}" text="{text}"/>
 															</Select>
-															<Input type="Text" showValueHelp="false" enabled="true" visible="true" width="100%" valueHelpOnly="false" maxLength="0" id="idOldText"/>
+															<!--<Input type="Text" showValueHelp="false" enabled="true" visible="true" width="100%" valueHelpOnly="false" maxLength="0" id="idOldText"/>-->
+															<TextArea growing="true" visible="true" width="100%"  maxLength="0" id="idOldText" editable="true"/>
 														</items>
 														<layoutData/>
 													</VBox>
@@ -53,7 +54,7 @@
 																id="idTo" items="{ path: '/languagesCollection', sorter: { path: 'text' } }">
 																<core:ListItem key="{key}" text="{text}"/>
 															</Select>
-															<Input type="Text" showValueHelp="false" visible="true" width="100%" valueHelpOnly="false" maxLength="0" id="idNewText" editable="false"/>
+															<TextArea growing="true" visible="true" width="100%"  maxLength="0" id="idNewText" editable="false"/>
 														</items>
 														<layoutData/>
 													</VBox>
