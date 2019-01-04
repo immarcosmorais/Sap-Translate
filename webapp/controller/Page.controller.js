@@ -1,10 +1,11 @@
 sap.ui.define([
+		"sap/m/MessageToast",
 		"sap/ui/core/mvc/Controller",
 		"sap/m/MessageBox",
 		"./utilities",
 		"sap/ui/core/routing/History",
-		'sap/ui/model/json/JSONModel'
-	], function (BaseController, MessageBox, Utilities, History, JSONModel) {
+		"sap/ui/model/json/JSONModel"
+	], function (MessageToast, BaseController, MessageBox, Utilities, History, JSONModel) {
 		"use strict";
 		return BaseController.extend("com.sap.build.standard.translation.controller.Page", {
 			handleRouteMatched: function (oEvent) {
@@ -188,6 +189,7 @@ sap.ui.define([
 				var oData = this.defineData();
 				var oModel = new JSONModel(oData);
 				this.getView().setModel(oModel);
+
 				this.getView().byId("idTo").setSelectedKey("pt");
 				this.getView().byId("idFrom").setSelectedKey("en");
 				this.oRouter = sap.ui.core.UIComponent.getRouterFor(this);
@@ -197,41 +199,46 @@ sap.ui.define([
 
 			translate: function () {
 
-				var apiKey = this.getView().getModel("demo").getProperty("/ApiKey");
-
-				var oModel = new sap.ui.model.json.JSONModel();
 				var langFrom = this.getView().byId("idFrom").getSelectedKey();
 				var langTo = this.getView().byId("idTo").getSelectedKey();
 				var oldText = this.getView().byId("idOldText").getValue();
 
-				var sHeaders = {
-					"Content-Type": "application/json",
-					"APIKey": apiKey
-				};
+				if (oldText !== "") {
 
-				var oData = {
-					"sourceLanguage": langFrom,
-					"targetLanguages": [langTo],
-					"units": [{
-						"value": oldText,
-						"key": apiKey
-					}]
-				};
+					var oModel = new sap.ui.model.json.JSONModel();
+					var apiKey = this.getView().getModel("demo").getProperty("/ApiKey");
 
-				var ODataJSON = JSON.stringify(oData);
-				var that = this;
+					var sHeaders = {
+						"Content-Type": "application/json",
+						"APIKey": apiKey
+					};
 
-				oModel.loadData("/ml-dest/translation/translation", ODataJSON, true, "POST", null, false, sHeaders);
-				oModel.attachRequestCompleted(function (oEvent) {
-					oData = oEvent.getSource().oData;
-					var newText = "The text was not translated";
-					if (!that.isEmptyObject(oData)) {
-						newText = oData.units[0].translations[0].value;
-						that.getView().byId("idNewText").setValue(newText);
-					} else {
-						that.getView().byId("idNewText").setValue(newText);
-					}
-				});
+					var oData = {
+						"sourceLanguage": langFrom,
+						"targetLanguages": [langTo],
+						"units": [{
+							"value": oldText,
+							"key": apiKey
+						}]
+					};
+
+					var ODataJSON = JSON.stringify(oData);
+					var that = this;
+
+					oModel.loadData("/ml-dest/translation/translation", ODataJSON, true, "POST", null, false, sHeaders);
+					oModel.attachRequestCompleted(function (oEvent) {
+						oData = oEvent.getSource().oData;
+						if (!that.isEmptyObject(oData)) {
+							var newText = oData.units[0].translations[0].value;
+							that.getView().byId("idNewText").setValue(newText);
+						} else {
+							MessageToast.show("The text was not translated!");
+						}
+					});
+					
+				} else {
+					MessageToast.show("It is required filling some text to translation!");
+				}
 
 			},
 
